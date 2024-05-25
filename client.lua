@@ -527,7 +527,7 @@ CreateThread(function()
 
         AttemptCrouch(PlayerPedId())
     end, false)
-    TriggerEvent('chat:addSuggestion', '/crouch', Config.Localization['crouch_chat_suggestion'])
+    TriggerEvent('chat:addSuggestion', '/crouch_mri_Q', Config.Localization['crouch_chat_suggestion'])
 
     if Config.CrawlKeybindEnabled then
         RegisterKeyMapping('+crawl', Config.Localization['crawl_keymapping'], "keyboard", Config.CrawlKeybind)
@@ -535,7 +535,7 @@ CreateThread(function()
         RegisterCommand('-crawl', function() end, false) -- This needs to be here to prevent warnings in chat
     end
     RegisterCommand('crawl', function() CrawlKeyPressed() end, false)
-    TriggerEvent('chat:addSuggestion', '/crouch', Config.Localization['crawl_chat_suggestion'])
+    TriggerEvent('chat:addSuggestion', '/crawl', Config.Localization['crawl_chat_suggestion'])
 end)
 
 
