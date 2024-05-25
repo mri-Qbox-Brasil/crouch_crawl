@@ -196,7 +196,7 @@ local function CrouchKeyPressed()
     -- If crouched then stop crouching
     if isCrouched then
         isCrouched = false
-        local crouchKey = GetControlInstructionalButton(0, `+crouch` | 0x80000000, false)
+        local crouchKey = GetControlInstructionalButton(0, `+crouch_mri_Q` | 0x80000000, false)
         local lookBehindKey = GetControlInstructionalButton(0, 26, false) -- INPUT_LOOK_BEHIND
 
         -- Disable look behind if the crouch and look behind keys are the same
@@ -215,8 +215,8 @@ local function CrouchKeyPressed()
         return
     end
 
-    -- Get +crouch, INPUT_LOOK_BEHIND and INPUT_DUCK controls
-    local crouchKey = GetControlInstructionalButton(0, `+crouch` | 0x80000000, false)
+    -- Get +crouch_mri_Q, INPUT_LOOK_BEHIND and INPUT_DUCK controls
+    local crouchKey = GetControlInstructionalButton(0, `+crouch_mri_Q` | 0x80000000, false)
     local lookBehindKey = GetControlInstructionalButton(0, 26, false) -- INPUT_LOOK_BEHIND
     local duckKey = GetControlInstructionalButton(0, 36, false) -- INPUT_DUCK
 
@@ -515,11 +515,11 @@ end
 -- Commands & KeyMapping --
 CreateThread(function()
     if Config.CrouchKeybindEnabled then
-        RegisterKeyMapping('+crouch', Config.Localization['crouch_keymapping'], "keyboard", Config.CrouchKeybind)
-        RegisterCommand('+crouch', function() CrouchKeyPressed() end, false)
-        RegisterCommand('-crouch', function() end, false) -- This needs to be here to prevent warnings in chat
+        RegisterKeyMapping('+crouch_mri_Q', Config.Localization['crouch_keymapping'], "keyboard", Config.CrouchKeybind)
+        RegisterCommand('+crouch_mri_Q', function() CrouchKeyPressed() end, false)
+        RegisterCommand('-crouch_mri_Q', function() end, false) -- This needs to be here to prevent warnings in chat
     end
-    RegisterCommand('crouch', function()
+    RegisterCommand('crouch_mri_Q', function()
         if isCrouched then
             isCrouched = false
             return
