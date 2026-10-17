@@ -3,8 +3,10 @@
 ## About
 Crouch & Crawl is a standalone resource that allows you to crouch and crawl (duh!). It differs from other similar scripts by having better/more animations, no standing up while crouching, keeping your walkstyle, as well as many small bug fixes.
 
+You can watch a breif showcase of the script on [YouTube](https://www.youtube.com/watch?v=TdxSXtIzNKQ).
+
 **Included in RPEmotes**  
-This resource is already included in [RPEmotes](https://github.com/TayMcKenzieNZ/rpemotes), so if you already use RPEmotes, then simply make sure that you are on the newest version and that Config.CrouchEnabled or Config.CrawlEnabled is set to true.
+This resource is already included in [RPEmotes Reborn](https://github.com/alberttheprince/rpemotes-reborn), so if you already use RPEmotes, then simply make sure that you are on the newest version and that Config.CrouchEnabled or Config.CrawlEnabled is set to true.
 
 If you don’t use RPEmotes then check it out, it’s quite nice!
 
@@ -42,7 +44,7 @@ Crouching: 0.07 ms
 Crawling: 0.06 ms  
 
 ## Exports
-There are 4 exports included with the script (all are client).
+There are 5 exports included with the script (all are client).
 
 |Export|Description|Parameter(s)|Return type|
 | --- | --- | --- | --- |
@@ -50,6 +52,15 @@ There are 4 exports included with the script (all are client).
 | IsPlayerProne | Returns if the player is prone (both when laying still and when moving) | None | Boolean |
 | IsPlayerCrawling | Returns if the player is crawling (only when moving forward/backward) | None | Boolean |
 | GetPlayerProneType | Returns if the player is on his back or front | None | String |
+| StopPlayerProne | Stops the player prone | force: boolean | Void |
+
+## State Bags
+If using version 1.0.2 or newer you will be able to use state bags to check if the player is crouching or prone.
+
+```lua
+print("isCrouched", LocalPlayer.state.isCrouched)
+print("isProne", LocalPlayer.state.isProne)
+```
 
 ## Contributers
 These are people who helped out developing the resource, a big thanks go to them!
